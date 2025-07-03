@@ -12,3 +12,13 @@ class User:
     # Method to update email later on if needed.
     def set_email(self, new_email):
         self.__email = new_email
+
+class Student(User):
+    def __init__(self, name, email):
+        super().__init__(name, email)   # call name and email from User 
+        self.__enrolled_courses = []    # start with an empty list of courses
+
+    # Method to enroll in a course
+    def enroll(self, course_name):
+        self.__enrolled_courses.append(course_name)
+
