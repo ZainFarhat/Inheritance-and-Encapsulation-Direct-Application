@@ -15,10 +15,18 @@ class User:
 
 class Student(User):
     def __init__(self, name, email):
-        super().__init__(name, email)   # call name and email from User 
-        self.__enrolled_courses = []    # start with an empty list of courses
+        super().__init__(name, email)   # get name and email from User 
+        self.__enrolled_courses = []    # empty list for enrolled courses
 
     # Method to enroll in a course
     def enroll(self, course_name):
         self.__enrolled_courses.append(course_name)
 
+class Instructor(User):
+    def __init__(self, name, email):
+        super().__init__(name, email)   # get name and email from User
+        self.__teaching_courses = []    # empty list for teaching courses
+
+    # Method to add a course
+    def add_course(self, course_name):
+        self.__teaching_courses.append(course_name)
